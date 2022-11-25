@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { blockchains } from "../../utilities/blockchains";
 
-export default function getScoreInput({ handleClose }) {
+export default function GetScoreInput({ handleClose }) {
   const router = useRouter();
 
   const [selectedBlockchain, setSelectedBlockchain] = React.useState(

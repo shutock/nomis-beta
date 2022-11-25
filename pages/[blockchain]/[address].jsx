@@ -16,14 +16,14 @@ export default function ScoredWallet({ query }) {
     (e) => e.slug === query.blockchain
   );
 
-  if (!currentBlockchain)
-    return (
-      <>
-        <h1>
-          We Don{"'"}t Scoring {query.blockchain} Blockchain Yet
-        </h1>
-      </>
-    );
+  // if (!currentBlockchain)
+  //   return (
+  //     <>
+  //       <h1>
+  //         We Don{"'"}t Scoring {query.blockchain} Blockchain Yet
+  //       </h1>
+  //     </>
+  //   );
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [data, setData] = React.useState(null);

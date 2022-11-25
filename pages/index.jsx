@@ -10,8 +10,7 @@ export default function Home() {
         <div className="scene">
           {/* <Spline scene="https://prod.spline.design/1s7zQQpgAI6Jxzls/scene.splinecode" /> */}{" "}
           {/* Atom */}
-          {/* <Spline scene="https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode" /> */}{" "}
-          {/* Crypto Objects */}
+          <Spline scene="https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode" />
         </div>
         <div className="wrapper">
           <h1>Headline</h1>
