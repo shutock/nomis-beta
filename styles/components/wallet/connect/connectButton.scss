@@ -1,0 +1,16 @@
+@import "../../../global";
+
+.connectButton {
+  padding: calc(1rem - 1px) calc(1.5rem - 1px);
+  background: transparent;
+  border: $style-border;
+  border-radius: 1.5rem;
+  color: $color-heading;
+  cursor: pointer;
+  transition: background $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    background: $color-overlay-1-solid;
+    border-color: $color-overlay-1-solid;
+  }
+}

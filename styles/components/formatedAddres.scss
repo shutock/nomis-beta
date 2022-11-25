@@ -1,0 +1,46 @@
+@import "../global";
+
+.formatedAddress {
+  gap: 0.25rem;
+  width: fit-content !important;
+
+  .symbols {
+  }
+
+  .type {
+    position: relative;
+    $padding: -0.25rem;
+    padding: 0 -2 * $padding;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: $padding;
+      left: 0;
+      right: 0;
+      bottom: $padding;
+      background: $color-overlay-1;
+      border-radius: 1rem;
+    }
+  }
+
+  .eth {
+    position: relative;
+    $padding: -0.25rem;
+    padding: 0 -2 * $padding;
+    $margin: -0.125rem;
+    margin-top: $margin;
+
+    &::before {
+      content: "";
+      margin-bottom: $margin;
+      position: absolute;
+      top: $padding;
+      left: 0;
+      right: 0;
+      bottom: $padding;
+      background: $color-overlay-1;
+      border-radius: 1rem;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+[data-theme="dark"] {
+  --color-text: 255, 255, 255;
+  --color-bg: 0, 0, 0;
+
+  --color-overlay-1: 25, 25, 25;
+  --color-overlay-2: 48, 48, 48;
+  --color-overlay-3: 69, 69, 69;
+
+  --alpha-bg: 75%;
+  --alpha-border: 20%;
+  --alpha-overlay: 10%;
+  --alpha-shadow: 80%;
+
+  --sat-signal: 60%;
+  --alpha-signal: 25%;
+
+  --blendmode-button: screen;
+}
+
+[data-theme="light"] {
+  --color-text: 0, 0, 0;
+  --color-bg: 255, 255, 255;
+
+  --color-overlay-1: 237, 237, 237;
+  --color-overlay-2: 220, 220, 220;
+  --color-overlay-3: 205, 205, 205;
+
+  --alpha-bg: 75%;
+  --alpha-border: 10%;
+  --alpha-overlay: 5%;
+  --alpha-shadow: 40%;
+
+  --sat-signal: 80%;
+  --alpha-signal: 40%;
+
+  --blendmode-button: screen;
+}

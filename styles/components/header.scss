@@ -1,0 +1,42 @@
+@import "../global";
+
+header {
+  border-bottom: $style-border;
+
+  .header {
+    padding: 1rem;
+    gap: 1rem;
+
+    .logoWrapper {
+      min-width: $width-sidebar-1;
+      max-width: $width-sidebar-1;
+      align-items: center;
+      height: 3rem;
+    }
+
+    .getScoreWrapper {
+      flex-grow: 1;
+    }
+
+    .walletWrapper {
+      min-width: $width-sidebar-1;
+      max-width: $width-sidebar-1;
+      justify-content: flex-end;
+    }
+
+    @media screen and (max-width: $width-mobile) {
+      .logoWrapper {
+        max-width: unset;
+        min-width: unset;
+        width: fit-content;
+        height: 2.5rem;
+      }
+
+      .walletWrapper {
+        max-width: unset;
+        min-width: unset;
+        width: fit-content;
+      }
+    }
+  }
+}

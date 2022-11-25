@@ -1,0 +1,41 @@
+.icon {
+  display: block;
+  font-family: $font-icon;
+  position: relative;
+  pointer-events: none;
+  color: $color-heading;
+
+  .outline {
+    position: absolute;
+    font-family: inherit;
+    font-size: inherit;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    color: inherit;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform $transition-fast, opacity $transition-fast;
+  }
+
+  .fill {
+    position: absolute;
+    font-family: inherit;
+    font-size: inherit;
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+    color: inherit;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform $transition-fast, opacity $transition-fast;
+  }
+
+  &.filled {
+    .outline {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    .fill {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

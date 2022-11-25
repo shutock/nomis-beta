@@ -1,0 +1,51 @@
+@import "../../../global";
+
+.profileButton {
+  padding: calc(0.25rem - 1px) calc(1rem - 1px) calc(0.25rem - 1px)
+    calc(0.25rem - 1px);
+  background: transparent;
+  border: $style-border;
+  border-radius: 1.5rem;
+  color: $color-heading;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background $transition-fast, border-color $transition-fast;
+
+  @media screen and (max-width: $width-mobile) {
+    padding: calc(0.25rem - 1px);
+  }
+
+  .formatedAddress {
+    @media screen and (max-width: $width-mobile) {
+      display: none;
+    }
+  }
+
+  &.ens {
+    padding: calc(0.25rem - 1px) calc(0.625rem - 1px) calc(0.25rem - 1px)
+      calc(0.25rem - 1px);
+
+    @media screen and (max-width: $width-mobile) {
+      padding: calc(0.25rem - 1px);
+    }
+  }
+
+  &:hover {
+    background: $color-overlay-1-solid;
+    border-color: $color-overlay-1-solid;
+  }
+
+  img {
+    $size: 2.5rem;
+    width: $size;
+    height: $size;
+    border-radius: 1.25rem;
+
+    @media screen and (max-width: $width-mobile) {
+      $size: 2rem;
+      width: $size;
+      height: $size;
+    }
+  }
+}

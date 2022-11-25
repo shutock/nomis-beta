@@ -1,0 +1,48 @@
+.menu {
+  max-width: $width-sidebar-1;
+  background: $color-overlay-1;
+  border-radius: 2rem;
+
+  nav {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .section {
+    &.back {
+      padding: 1rem;
+      border-bottom: $style-border;
+    }
+
+    .item {
+      align-items: center;
+      gap: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      transition: background $transition-fast, padding $transition-fast,
+        color $transition-fast;
+      cursor: pointer;
+
+      &:hover {
+        background: $color-overlay-1;
+        padding: 0.75rem;
+        color: $color-heading;
+      }
+
+      .icon {
+        .outline {
+          color: $color-text-hidden;
+          font-variation-settings: "wght" 200;
+        }
+      }
+    }
+  }
+
+  .back {
+  }
+
+  nav {
+    .section {
+    }
+  }
+}

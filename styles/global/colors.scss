@@ -1,0 +1,63 @@
+// Text
+$color-heading: rgba(var(--color-text), 100%);
+$color-subheading: rgba(var(--color-text), 60%);
+
+$color-text: rgba(var(--color-text), 80%);
+$color-text-hidden: rgba(var(--color-text), 40%);
+
+// Effect
+$color-border: rgba(var(--color-text), var(--alpha-border));
+
+// Overlay
+$color-overlay-1: rgba(var(--color-text), var(--alpha-overlay));
+$color-overlay-2: rgba(var(--color-text), calc(var(--alpha-overlay) * 2));
+$color-overlay-3: rgba(var(--color-text), calc(var(--alpha-overlay) * 3));
+
+$color-overlay-1-solid: rgba(var(--color-overlay-1), 100%);
+$color-overlay-2-solid: rgba(var(--color-overlay-2), 100%);
+$color-overlay-3-solid: rgba(var(--color-overlay-3), 100%);
+
+$color-overlay-shadow: rgba(0, 0, 0, var(--alpha-shadow));
+
+// Background
+$color-background: rgba(var(--color-bg), 100%);
+$color-background-alpha: rgba(var(--color-bg), var(--alpha-bg));
+
+// Accent
+$color-accent-blue: #1a5ee5;
+$color-accent-purple: #b448ea;
+
+$color-accent-gradient: linear-gradient(240deg, #1a5ee5 0%, #b448ea 100%);
+
+// Signal
+$color-signal-inforation: hsla(200, var(--sat-signal), 60%, 100%);
+$color-signal-inforation-tint: hsla(
+  200,
+  var(--sat-signal),
+  60%,
+  var(--alpha-signal)
+);
+
+$color-signal-success: hsla(140, var(--sat-signal), 60%, 100%);
+$color-signal-success-tint: hsla(
+  140,
+  var(--sat-signal),
+  60%,
+  var(--alpha-signal)
+);
+
+$color-signal-warning: hsla(50, var(--sat-signal), 60%, 100%);
+$color-signal-warning-tint: hsla(
+  50,
+  var(--sat-signal),
+  60%,
+  var(--alpha-signal)
+);
+
+$color-signal-danger: hsla(350, var(--sat-signal), 60%, 100%);
+$color-signal-danger-tint: hsla(
+  350,
+  var(--sat-signal),
+  60%,
+  var(--alpha-signal)
+);

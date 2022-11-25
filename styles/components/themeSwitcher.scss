@@ -1,0 +1,59 @@
+.themeSwitcher {
+  gap: 0.5rem;
+  background: $color-overlay-1;
+  border-radius: 1rem;
+  position: relative;
+  // overflow: hidden;
+
+  .theme {
+    padding: 1rem 0.5rem;
+    width: 100%;
+    gap: 0.25rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &.system .icon .fill {
+      @media (prefers-color-scheme: light) {
+        color: #dc8504;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        color: #497adc;
+      }
+    }
+    &.light .icon .fill {
+      color: #dc8504;
+    }
+    &.dark .icon .fill {
+      color: #497adc;
+    }
+  }
+
+  .selector {
+    position: absolute;
+    top: 0.25rem;
+    left: 0;
+    width: calc(100% / 3 - 1rem / 3 - 0.5rem);
+    height: calc(100% - 0.5rem);
+    background: $color-overlay-1;
+    left: 0.25rem;
+    z-index: -1;
+    transition: left $transition-fast;
+    border-radius: 0.75rem;
+
+    &.system {
+      left: 0.25rem;
+    }
+
+    &.light {
+      left: calc(100% / 3 + 1rem / 6 + 0.25rem);
+    }
+
+    &.dark {
+      left: calc(100% - (100% / 3 - 1rem / 3) + 0.25rem);
+    }
+  }
+}

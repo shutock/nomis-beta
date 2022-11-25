@@ -1,0 +1,15 @@
+.connectors {
+  .connector {
+    padding: 0.25rem;
+    border-radius: 1rem;
+    align-items: center;
+    color: $color-heading;
+    background: $color-overlay-1;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-overlay-2;
+    }
+  }
+}

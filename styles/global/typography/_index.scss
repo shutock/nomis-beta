@@ -1,0 +1,122 @@
+@import "./fonts.scss";
+
+$font-main: "Inter", sans-serif;
+$font-fancy: "Space Grotesk", sans-serif;
+$font-monospace: "Space Mono", monospace;
+$font-icon: "Material Symbols";
+
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+html {
+  font-size: 16px;
+
+  @media screen and (max-width: $width-mobile) {
+    font-size: 14px;
+  }
+}
+
+* {
+  font-family: $font-main;
+  font-weight: $weight-regular;
+  color: $color-text;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.618;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+h1,
+.h1 {
+  font-family: $font-fancy;
+  font-weight: $weight-bold;
+  color: $color-heading;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  font-size: 5rem;
+
+  @media screen and (max-width: $width-mobile) {
+    font-size: 3rem;
+  }
+}
+
+h2,
+.h2 {
+  font-family: $font-main;
+  font-weight: $weight-bold;
+  color: $color-heading;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-size: 3rem;
+
+  @media screen and (max-width: $width-mobile) {
+    font-size: 2.25rem;
+  }
+}
+
+h3,
+.h3 {
+  font-family: $font-main;
+  font-weight: $weight-semibold;
+  color: $color-heading;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-size: 2.5rem;
+
+  @media screen and (max-width: $width-mobile) {
+    font-size: 2rem;
+  }
+}
+
+h4,
+.h4 {
+  font-family: $font-main;
+  font-weight: $weight-semibold;
+  color: $color-heading;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-size: 2rem;
+
+  @media screen and (max-width: $width-mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+h5,
+.h5 {
+  font-family: $font-main;
+  font-weight: $weight-semibold;
+  color: $color-heading;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-size: 1.5rem;
+
+  @media screen and (max-width: $width-mobile) {
+    font-size: 1.25rem;
+  }
+}
+
+h6,
+.h6 {
+  font-family: $font-main;
+  font-weight: $weight-medium;
+  color: $color-subheading;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}

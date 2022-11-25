@@ -1,0 +1,49 @@
+$width-max: 1400px;
+$width-mobile: 420px;
+$width-tablet: 930px;
+$width-sidebar-1: 360px;
+
+body {
+  background: $color-background;
+}
+
+header,
+main,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $width-max;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+}

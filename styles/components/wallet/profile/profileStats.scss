@@ -1,0 +1,36 @@
+.profileStats {
+  .stat {
+    align-items: center;
+    gap: 0.5rem;
+
+    &.turnover {
+      border-left: $style-border;
+      border-right: $style-border;
+      margin: 0 -1px;
+    }
+    .values {
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .value {
+      justify-content: center;
+      width: fit-content;
+      gap: 0.25rem;
+      align-items: baseline;
+
+      .num {
+        font-family: $font-fancy;
+        font-size: 1.25rem;
+        color: $color-heading;
+        font-weight: $weight-medium;
+      }
+      .units {
+      }
+    }
+    .description {
+      color: $color-text-hidden;
+      font-size: 0.75rem;
+    }
+  }
+}
