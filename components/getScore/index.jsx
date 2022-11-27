@@ -8,6 +8,8 @@ import GetScoreModal from "./getScoreModal";
 
 import { shortcuts } from "../../utilities/shortcuts";
 
+import { blockchains } from "../../utilities/blockchains";
+
 export default function GetScore() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -41,4 +43,8 @@ export default function GetScore() {
       ) : null}
     </div>
   );
+}
+
+export function getServerSideProps(context) {
+  return { props: { query: context.query } };
 }

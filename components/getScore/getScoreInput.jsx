@@ -10,9 +10,13 @@ export default function GetScoreInput({ handleClose }) {
   const router = useRouter();
 
   const [selectedBlockchain, setSelectedBlockchain] = React.useState(
-    blockchains.find((e) => e.slug === "ethereum")
+    router.query.blockchain
+      ? blockchains.find((e) => e.slug === router.query.blockchain)
+      : blockchains.find((e) => e.slug === "ethereum")
   );
-  const [addressToSearch, setAddressToSearch] = React.useState("");
+  const [addressToSearch, setAddressToSearch] = React.useState(
+    router.query.address ? router.query.address : ""
+  );
 
   const handleSearch = () => {
     handleClose();
@@ -36,6 +40,7 @@ export default function GetScoreInput({ handleClose }) {
             placeholder={selectedBlockchain.placeholder}
             autoFocus
             onChange={(e) => setAddressToSearch(e.target.value)}
+            defaultValue={addressToSearch}
           />
         </div>
         <div className="getScoreSubmit" onClick={handleSearch}>

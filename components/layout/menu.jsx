@@ -1,8 +1,12 @@
 import Link from "next/link";
+
+import { useRouter } from "next/router";
+
 import { mainMenu } from "../../utilities/menu";
 import Icon from "../icon";
 
-import { useRouter } from "next/router";
+import * as Banner from "../banner";
+import Image from "next/image";
 
 export default function Menu() {
   const router = useRouter();
@@ -77,6 +81,9 @@ export default function Menu() {
           })}
         </div>
       </nav>
+      <div className="col section banner">
+        <Banner.Menu />
+      </div>
     </div>
   );
 }

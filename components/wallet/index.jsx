@@ -1,6 +1,8 @@
 import React from "react";
 import { useAccount, useNetwork } from "wagmi";
 
+import useSWR from "swr";
+
 import { useDispatch } from "react-redux";
 import {
   connect,
@@ -15,13 +17,13 @@ import { blockchains } from "../../utilities/blockchains";
 import Connect from "./connect";
 import Profile from "./profile";
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 export default function Wallet() {
   const dispatch = useDispatch();
 
   const { address, isConnected } = useAccount();
   const { chain } = useNetwork();
-
-  const [data, setData] = React.useState(null);
 
   const ensName = useName(address);
   const ensAvatar = useAvatar(address);
@@ -30,21 +32,22 @@ export default function Wallet() {
     : "";
 
   React.useEffect(() => {
-    fetch(
-      `https://api.nomis.cc/api/v1/${activeChain.slug}/wallet/${address}/score`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-        return response.json();
-      })
-      .then((actualData) => dispatch(getScore(actualData)))
-      .catch((err) => {
-        console.log(err.message);
-      });
+    if (isConnected)
+      fetch(
+        `https://api.nomis.cc/api/v1/${activeChain.slug}/wallet/${address}/score`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(
+              `This is an HTTP error: The status is ${response.status}`
+            );
+          }
+          return response.json();
+        })
+        .then((actualData) => dispatch(getScore(actualData)))
+        .catch((err) => {
+          console.log(err.message);
+        });
   }, [activeChain]);
 
   React.useEffect(() => {

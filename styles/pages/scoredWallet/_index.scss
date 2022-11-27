@@ -1,0 +1,62 @@
+.scoredWallet {
+  .wrapper {
+    padding: 1rem;
+    gap: 1rem;
+
+    .stats {
+      gap: 1rem;
+
+      .data {
+        padding: 2rem 1rem 1rem 1rem;
+        border-radius: 2rem;
+        background: $color-overlay-1;
+
+        section {
+          gap: 1rem;
+
+          .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            grid-gap: 1rem;
+          }
+        }
+      }
+
+      .user {
+        width: 100%;
+        max-width: $width-sidebar-1;
+        padding: 1rem;
+        background: $color-overlay-1;
+        border-radius: 2rem;
+        gap: 2rem;
+
+        .avatar {
+          align-items: center;
+          gap: 1rem;
+
+          .userpick {
+            position: relative;
+
+            img {
+              $size: 8rem;
+              width: $size;
+              height: $size;
+              border-radius: $size / 2;
+            }
+
+            .profileScore {
+              position: absolute;
+              top: calc(0.5rem - 2px);
+              left: calc(6rem - 2px);
+            }
+          }
+
+          .addressCopy {
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}

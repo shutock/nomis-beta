@@ -5,6 +5,7 @@ export const blockchains = [
     placeholder: "ak_... address",
     coin: "AE",
     id: "",
+    startDate: "2018-12-04",
   },
   {
     item: "Binance",
@@ -12,6 +13,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "BNB",
     id: 56,
+    startDate: "2020-09-04",
   },
   {
     item: "Celo",
@@ -19,6 +21,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "CELO",
     id: 42220,
+    startDate: "2020-05-23",
   },
   {
     item: "Cube",
@@ -26,6 +29,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "CUBE",
     id: 1818,
+    startDate: "2020-06-06",
   },
   {
     item: "Ethereum",
@@ -33,6 +37,7 @@ export const blockchains = [
     placeholder: "0x... or .eth",
     coin: "ETH",
     id: 1,
+    startDate: "2015-7-30",
   },
   {
     item: "Evmos",
@@ -40,6 +45,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "EVMOS",
     id: 9001,
+    startDate: "2022-05-04",
   },
   {
     item: "Hedera",
@@ -47,6 +53,7 @@ export const blockchains = [
     placeholder: "Wallet address",
     coin: "HBAR",
     id: "",
+    startDate: "2019-09-20",
   },
   {
     item: "Klaytn",
@@ -54,6 +61,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "KLAY",
     id: 8217,
+    startDate: "2020-03-31",
   },
   {
     item: "Moonbeam",
@@ -61,6 +69,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "GLMR",
     id: 1284,
+    startDate: "2022-01-11",
   },
   {
     item: "Near",
@@ -68,6 +77,7 @@ export const blockchains = [
     placeholder: "Wallet address",
     coin: "NEAR",
     id: "",
+    startDate: "2020-10-14",
   },
   {
     item: "Polygon",
@@ -75,6 +85,7 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "MATIC",
     id: 137,
+    startDate: "2019-04-29",
   },
   {
     item: "Ripple",
@@ -82,6 +93,7 @@ export const blockchains = [
     placeholder: "r... address",
     coin: "XRP",
     id: "",
+    startDate: "2013-08-05",
   },
   {
     item: "Solana",
@@ -89,6 +101,7 @@ export const blockchains = [
     placeholder: "Wallet address",
     coin: "SOL",
     id: "",
+    startDate: "2020-04-11",
   },
   {
     item: "Tron",
@@ -96,5 +109,8 @@ export const blockchains = [
     placeholder: "0x... address",
     coin: "TRX",
     id: "",
+    startDate: "2017-09-14",
   },
 ];
+
+export default blockchains;

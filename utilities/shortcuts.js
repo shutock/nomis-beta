@@ -20,3 +20,5 @@ export const shortcuts = {
     description: "Show shortcuts",
   },
 };
+
+export default shortcuts;

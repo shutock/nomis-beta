@@ -1,17 +1,17 @@
+import dynamic from "next/dynamic";
 import React from "react";
-// import Spline from "@splinetool/react-spline";
 
 import Layout from "../components/layout";
 
 export default function Home() {
+  const Scene = dynamic(() => import("../components/pages/home/scene"), {
+    ssr: false,
+  });
+
   return (
     <Layout pageClass="home" pageTitle="Home">
       <section className="hero">
-        <div className="scene">
-          {/* <Spline scene="https://prod.spline.design/1s7zQQpgAI6Jxzls/scene.splinecode" /> */}{" "}
-          {/* Atom */}
-          {/* <Spline scene="https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode" /> */}
-        </div>
+        <Scene url="https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode" />
         <div className="wrapper">
           <h1>Headline</h1>
         </div>

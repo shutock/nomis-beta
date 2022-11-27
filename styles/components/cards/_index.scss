@@ -1,0 +1,17 @@
+@import "./score.scss";
+
+.card {
+  padding: 1rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  background: $color-overlay-1;
+  overflow: hidden;
+  min-height: 100%;
+
+  .content {
+    gap: 0.5rem;
+    p {
+      line-height: 1.25;
+    }
+  }
+}

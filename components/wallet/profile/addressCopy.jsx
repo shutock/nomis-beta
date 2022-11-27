@@ -3,7 +3,7 @@ import React from "react";
 import FormatedAddress from "../../formatedAddres";
 import Icon from "../../icon";
 
-export default function AddressCopy({ address }) {
+export default function AddressCopy({ address, formated = true }) {
   const [isCopied, setIsCopied] = React.useState(false);
 
   const copy = () => {
@@ -21,7 +21,7 @@ export default function AddressCopy({ address }) {
       }
       onClick={copy}
     >
-      <FormatedAddress address={address} />
+      {formated ? <FormatedAddress address={address} /> : address}
       <Icon icon="content_copy" size={16} active={isCopied} />
     </div>
   );

@@ -1,71 +1,79 @@
 import React from "react";
 
-import ScoredLayout from "../../components/pages/scoredWallet/ScoredLayout";
+import useSWR from "swr";
+import Layout from "../../components/layout";
+import Menu from "../../components/layout/menu";
+import WalletStats from "../../components/pages/scoredWallet";
+
 import { blockchains } from "../../utilities/blockchains";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getScore,
-  saveWallet,
-  addHistory,
-  reset,
-} from "../../redux/slices/searchedWallet";
+import { useDispatch } from "react-redux";
+import { reset } from "../../redux/slices/searchedWallet";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function ScoredWallet({ query }) {
+  if (!query)
+    return (
+      <Layout
+        pageClass="scoredWallet"
+        pageTitle={`There is an Error`}
+        pageDescription={`We can't get score of this wallet.`}
+      >
+        <div className=".row wrapper">
+          <Menu />
+
+          <WalletStats state="error" />
+        </div>
+      </Layout>
+    );
+
   const dispatch = useDispatch();
+  dispatch(reset());
+
+  const { data, error } = useSWR(
+    `https://api.nomis.cc/api/v1/${query.blockchain}/wallet/${query.address}/score`,
+    fetcher
+  );
+
   const currentBlockchain = blockchains.find(
     (e) => e.slug === query.blockchain
   );
 
-  // if (!currentBlockchain)
-  //   return (
-  //     <>
-  //       <h1>
-  //         We Don{"'"}t Scoring {query.blockchain} Blockchain Yet
-  //       </h1>
-  //     </>
-  //   );
-
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [data, setData] = React.useState(null);
-
-  const history = useSelector((s) => s.searchedWallet.history);
-
-  React.useEffect(() => {
-    // dispatch(reset());
-    fetch(
-      `https://api.nomis.cc/api/v1/${query.blockchain}/wallet/${query.address}/score`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-        return response.json();
-      })
-      .then((actualData) => {
-        setData(actualData);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, [query]);
-  console.log(data);
-
   return (
-    <ScoredLayout
+    <Layout
       pageClass="scoredWallet"
-      pageTitle={`${query.address}'s Score on ${currentBlockchain.item}`}
-      pageDescription={`${query.address}'s Score on ${currentBlockchain.item}`}
+      pageTitle={
+        !error
+          ? `${query.address}'s Score on ${currentBlockchain.item}`
+          : `There is an Error`
+      }
+      pageDescription={
+        !error
+          ? `${query.address}'s Score on ${currentBlockchain.item}`
+          : `We can't get score of this wallet.`
+      }
     >
-      <div className="wrapper"></div>
-    </ScoredLayout>
+      <div className=".row wrapper">
+        <Menu />
+
+        {error || (data && !data.succeeded) ? (
+          <WalletStats state="error" />
+        ) : data ? (
+          <WalletStats
+            state="success"
+            address={query.address}
+            data={data}
+            currentBlockchain={currentBlockchain}
+          />
+        ) : (
+          <WalletStats state="loading" />
+        )}
+      </div>
+    </Layout>
   );
 }
 
-export function getServerSideProps(context) {
-  return { props: { query: context.query } };
+export async function getServerSideProps(context) {
+  const query = await context.query;
+  return { props: { query: query } };
 }

@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialCurrent = {
+  wallet: { address: null, blockchain: null, suerpick: null },
+  score: null,
+  stats: null,
+  isSuccess: null,
+};
+
 const initialState = {
-  current: {
-    wallet: { address: null, blockchain: null },
-    score: null,
-    stats: null,
-    isSuccess: null,
-  },
+  current: initialCurrent,
   history: [],
 };
 
@@ -27,7 +29,7 @@ export const searchedWalletSlice = createSlice({
       else state.history.push(action.payload);
     },
     reset: (state) => {
-      state = initialState;
+      state.current = initialCurrent;
     },
   },
 });

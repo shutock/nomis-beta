@@ -42,3 +42,5 @@ export const mainMenu = [
     onClick: "",
   },
 ];
+
+export default mainMenu;
