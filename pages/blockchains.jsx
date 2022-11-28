@@ -29,6 +29,7 @@ export default function Blockchains() {
         <div className="row content">
           <Menu />
           <section className="list">
+            <h3>List</h3>
             {alphabet.map((letter) => {
               if (blockchains.find((b) => b.item[0] === letter))
                 return (
