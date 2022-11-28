@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import * as Card from "../../../cards";
+import Stats from "../statsTable";
 import User from "../user";
 
 export default function Success() {
@@ -16,6 +17,10 @@ export default function Success() {
             <Card.Turnover wallet={wallet} />
             <Card.Age wallet={wallet} />
           </div>
+        </section>
+        <section className="stats">
+          <h4>Stats</h4>
+          <Stats wallet={wallet} />
         </section>
       </div>
       <User />

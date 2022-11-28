@@ -1,0 +1,44 @@
+.blockchain {
+  padding: 0;
+
+  .hero {
+    min-height: 40rem;
+    position: relative;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backdrop-filter: $style-blur-hard;
+      -webkit-backdrop-filter: $style-blur-hard;
+      z-index: -1;
+    }
+
+    img {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      right: -1rem;
+      bottom: -1rem;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .wrapper {
+      .heroCard {
+        margin-top: 5rem;
+        z-index: 1;
+        gap: 2rem;
+        padding: 1rem;
+
+        .heading {
+        }
+      }
+    }
+  }
+}

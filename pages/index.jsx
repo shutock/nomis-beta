@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Layout pageClass="home" pageTitle="Home">
       <section className="hero">
-        <Scene url="https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode" />
+        {/* <Scene url="https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode" /> */}
         <div className="wrapper">
           <h1>Headline</h1>
         </div>

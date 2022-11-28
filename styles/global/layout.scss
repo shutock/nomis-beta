@@ -18,6 +18,10 @@ footer {
   width: 100%;
 }
 
+main {
+  padding-top: 5rem;
+}
+
 .wrapper {
   width: 100%;
   max-width: $width-max;
@@ -33,6 +37,10 @@ section {
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
+
+  .wrapper {
+    margin: 0 auto;
+  }
 }
 
 .row {

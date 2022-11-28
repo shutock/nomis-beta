@@ -2,6 +2,8 @@
 
 header {
   border-bottom: $style-border;
+  position: fixed;
+  z-index: 2;
 
   .header {
     padding: 1rem;

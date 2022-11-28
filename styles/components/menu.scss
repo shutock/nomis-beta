@@ -2,6 +2,9 @@
   max-width: $width-sidebar-2;
   background: $color-overlay-1;
   border-radius: 2rem;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 6rem;
 
   nav {
     gap: 1rem;
@@ -55,6 +58,7 @@
       height: 8rem;
       position: relative;
       transition: transform $transition-fast;
+      top: 0;
 
       img {
         object-fit: cover;

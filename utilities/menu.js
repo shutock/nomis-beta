@@ -1,6 +1,6 @@
 export const mainMenu = [
   {
-    item: "Our Tops",
+    item: "Leaderboard (soon)",
     section: "navigation",
     icon: "trending_up",
     link: "/#",
@@ -10,25 +10,25 @@ export const mainMenu = [
     item: "Blockchains",
     section: "navigation",
     icon: "hub",
-    link: "/#",
+    link: "/blockchains",
     onClick: "",
   },
   {
-    item: "About Nomis",
+    item: "About Nomis (soon)",
     section: "navigation",
     icon: "tips_and_updates",
     link: "/#",
     onClick: "",
   },
   {
-    item: "Follow Us",
+    item: "Follow Us (soon)",
     section: "social",
     icon: "favorite",
     link: "/#",
     onClick: "",
   },
   {
-    item: "Contact Us",
+    item: "Contact Us (soon)",
     section: "social",
     icon: "mail",
     link: "/#",
@@ -38,7 +38,7 @@ export const mainMenu = [
     item: "Docs",
     section: "docs",
     icon: "description",
-    link: "/#",
+    link: "https://api.nomis.cc",
     onClick: "",
   },
 ];

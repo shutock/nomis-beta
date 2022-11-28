@@ -1,0 +1,59 @@
+.statsTable {
+  background: $color-overlay-1;
+  border-radius: 1rem;
+
+  .label {
+    width: 50%;
+  }
+
+  .description {
+    width: 30%;
+  }
+
+  .value {
+    width: 20%;
+  }
+
+  .header {
+    position: sticky;
+    top: 6rem;
+    width: 100%;
+
+    background: $color-overlay-1;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    backdrop-filter: $style-blur-soft;
+    -webkit-backdrop-filter: $style-blur-soft;
+
+    div {
+      color: $color-heading;
+      font-weight: $weight-medium;
+    }
+  }
+
+  .body {
+    gap: 0.25rem;
+    padding: 0 1rem;
+
+    .stat {
+      padding: 1rem 0;
+
+      border-bottom: $style-border;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    .description {
+      gap: 0.25rem;
+
+      .units {
+        color: $color-text-hidden;
+        font-size: 0.75rem;
+        font-weight: $weight-light;
+      }
+    }
+  }
+}

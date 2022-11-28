@@ -37,7 +37,7 @@ export default function ProfileStats({ wallet }) {
 
           <div className="row value">
             <div className="span num">{age.month}</div>
-            <span className="units">{age.month > 1 ? "mos" : "mo"}</span>
+            <span className="units">mo</span>
           </div>
         </div>
         <div className="description">Wallet Age</div>
