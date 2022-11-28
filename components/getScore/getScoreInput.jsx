@@ -1,12 +1,34 @@
 import React from "react";
 
+import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import Image from "next/image";
 
-import { blockchains } from "../../utilities/blockchains";
+import blockchainsRaw from "../../utilities/blockchains";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function GetScoreInput({ handleClose }) {
+  const blockchains = [];
+  for (let i = 0; i < blockchainsRaw.length; i++) {
+    const { data, error } = useSWR(
+      `https://api.coingecko.com/api/v3/coins/${blockchainsRaw[i].coingeckoId}`,
+      fetcher
+    );
+
+    blockchains[i] = {
+      item: blockchainsRaw[i].item,
+      slug: blockchainsRaw[i].slug,
+      placeholder: blockchainsRaw[i].placeholder,
+      coin: blockchainsRaw[i].coin,
+      id: blockchainsRaw[i].id,
+      startDate: blockchainsRaw[i].startDate,
+      coingeckoId: blockchainsRaw[i].coingeckoId,
+      rank: data ? data.market_cap_rank : "",
+    };
+  }
+
   const router = useRouter();
 
   const [selectedBlockchain, setSelectedBlockchain] = React.useState(
@@ -49,31 +71,33 @@ export default function GetScoreInput({ handleClose }) {
       </div>
 
       <div className="row selectBlockchain">
-        {blockchains.map((blockchain) => {
-          return (
-            <div
-              className={
-                blockchain.slug === selectedBlockchain.slug
-                  ? "row blockchain selected"
-                  : "row blockchain"
-              }
-              key={blockchain.item}
-              onClick={() =>
-                setSelectedBlockchain(
-                  blockchains.find((e) => e.slug === blockchain.slug)
-                )
-              }
-            >
-              <Image
-                src={`/blockchains/${blockchain.slug}.svg`}
-                width={24}
-                height={24}
-                alt={`${blockchain.item}'s logotype`}
-              />
-              {blockchain.item}
-            </div>
-          );
-        })}
+        {blockchains
+          .sort((a, b) => parseFloat(a.rank) - parseFloat(b.rank))
+          .map((blockchain) => {
+            return (
+              <div
+                className={
+                  blockchain.slug === selectedBlockchain.slug
+                    ? "row blockchain selected"
+                    : "row blockchain"
+                }
+                key={blockchain.item}
+                onClick={() =>
+                  setSelectedBlockchain(
+                    blockchains.find((e) => e.slug === blockchain.slug)
+                  )
+                }
+              >
+                <Image
+                  src={`/blockchains/${blockchain.slug}.svg`}
+                  width={24}
+                  height={24}
+                  alt={`${blockchain.item}'s logotype`}
+                />
+                {blockchain.item}
+              </div>
+            );
+          })}
       </div>
     </div>
   );
