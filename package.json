@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
+    "@splinetool/loader": "^0.9.145",
     "@splinetool/react-spline": "^2.2.3",
+    "@splinetool/runtime": "^0.9.145",
     "chart.js": "^4.0.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",

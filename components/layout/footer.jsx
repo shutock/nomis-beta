@@ -9,9 +9,7 @@ export default function Footer() {
         <div className="col footer">
           <Logo />
           <div>Made with love by Nomis Team.</div>
-          <div>
-            {year} / {"(c)"} All rights reserved.
-          </div>
+          <div>{year} / © All rights reserved.</div>
         </div>
       </div>
     </footer>

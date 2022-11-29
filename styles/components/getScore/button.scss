@@ -1,0 +1,35 @@
+.button {
+  padding: 1rem 1.5rem;
+  background: $color-overlay-1;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: translateY(-0.25rem) scale(1.05);
+  }
+
+  &.primary {
+    background: #000;
+    color: #fff;
+    position: relative;
+
+    &:hover {
+      &::after {
+        left: -50%;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      mix-blend-mode: $blendmode-button;
+      top: 0;
+      left: 0;
+      width: 150%;
+      height: 100%;
+      background: $color-accent-gradient;
+      transition: left $transition-fast;
+    }
+  }
+}

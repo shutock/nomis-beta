@@ -5,7 +5,7 @@ const atomScene =
 const objectsScene =
   "https://prod.spline.design/A-CAELRxlfHFcrWL/scene.splinecode";
 
-export default function Scene({ url = objectsScene }) {
+export default function Scene({ url = atomScene }) {
   return (
     <div className="scene">
       <Spline scene={url} />
