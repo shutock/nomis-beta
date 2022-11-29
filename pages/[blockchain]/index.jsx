@@ -11,19 +11,19 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 export default function Blockchain({ blockchain }) {
   const isExist = blockchains.find((b) => b.slug === blockchain) ? true : false;
 
-  if (!isExist)
-    return (
-      <Layout pageTitle="Loading">
-        <h1>404</h1>
-      </Layout>
-    );
-
   const { data, error } = useSWR(
     `https://api.coingecko.com/api/v3/coins/${
       blockchains.find((b) => b.slug === blockchain).coingeckoId
     }`,
     fetcher
   );
+
+  if (!isExist)
+    return (
+      <Layout pageTitle="Loading">
+        <h1>404</h1>
+      </Layout>
+    );
 
   if (!data) {
     return <Layout>Loading...</Layout>;
