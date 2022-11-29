@@ -11,11 +11,11 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function GetScoreInput({ handleClose }) {
   const blockchains = [];
+
   for (let i = 0; i < blockchainsRaw.length; i++) {
-    const { data, error } = useSWR(
-      `https://api.coingecko.com/api/v3/coins/${blockchainsRaw[i].coingeckoId}`,
-      fetcher
-    );
+    const data = fetch(
+      `https://api.coingecko.com/api/v3/coins/${blockchainsRaw[i].coingeckoId}`
+    ).then((data) => data.json());
 
     blockchains[i] = {
       item: blockchainsRaw[i].item,
