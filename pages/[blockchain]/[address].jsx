@@ -12,21 +12,6 @@ import { reset } from "../../redux/slices/searchedWallet";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function ScoredWallet({ query }) {
-  if (!query)
-    return (
-      <Layout
-        pageClass="scoredWallet"
-        pageTitle={`There is an Error`}
-        pageDescription={`We can't get score of this wallet.`}
-      >
-        <div className=".row wrapper">
-          <Menu />
-
-          <WalletStats state="error" />
-        </div>
-      </Layout>
-    );
-
   const dispatch = useDispatch();
   dispatch(reset());
 
@@ -38,6 +23,20 @@ export default function ScoredWallet({ query }) {
   const currentBlockchain = blockchains.find(
     (e) => e.slug === query.blockchain
   );
+  // if (!query)
+  //   return (
+  //     <Layout
+  //       pageClass="scoredWallet"
+  //       pageTitle={`There is an Error`}
+  //       pageDescription={`We can't get score of this wallet.`}
+  //     >
+  //       <div className=".row wrapper">
+  //         <Menu />
+
+  //         <WalletStats state="error" />
+  //       </div>
+  //     </Layout>
+  //   );
 
   return (
     <Layout
