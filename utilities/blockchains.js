@@ -139,6 +139,16 @@ export const blockchains = [
     coingeckoId: "tron",
     rank: 17,
   },
+  {
+    item: "Waves",
+    slug: "waves",
+    placeholder: "Wallet address",
+    coin: "WAVES",
+    id: "",
+    startDate: "2016-06-02",
+    coingeckoId: "tron",
+    rank: 130,
+  },
 ];
 
 export default blockchains;
