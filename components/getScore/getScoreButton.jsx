@@ -9,7 +9,7 @@ export default function GetScoreButton({ handleOpen }) {
     <div className="row getScoreButton" onClick={handleOpen}>
       <div className="row input">
         <Icon icon="search" />
-        Get score...
+        <span>Get score...</span>
       </div>
       <Shortcut />
     </div>

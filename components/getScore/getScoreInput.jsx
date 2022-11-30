@@ -1,37 +1,12 @@
 import React from "react";
 
-import useSWR from "swr";
 import { useRouter } from "next/router";
 
 import Image from "next/image";
 
-import blockchainsRaw from "../../utilities/blockchains";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import blockchains from "../../utilities/blockchains";
 
 export default function GetScoreInput({ handleClose }) {
-  const blockchains = [];
-
-  const [data, setData] = React.useState(null);
-  for (let i = 0; i < blockchainsRaw.length; i++) {
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/${blockchainsRaw[i].coingeckoId}`
-    )
-      .then((res) => res.json())
-      .then((data) => setData(data));
-
-    blockchains[i] = {
-      item: blockchainsRaw[i].item,
-      slug: blockchainsRaw[i].slug,
-      placeholder: blockchainsRaw[i].placeholder,
-      coin: blockchainsRaw[i].coin,
-      id: blockchainsRaw[i].id,
-      startDate: blockchainsRaw[i].startDate,
-      coingeckoId: blockchainsRaw[i].coingeckoId,
-      rank: data ? data.market_cap_rank : "",
-    };
-  }
-
   const router = useRouter();
 
   const [selectedBlockchain, setSelectedBlockchain] = React.useState(

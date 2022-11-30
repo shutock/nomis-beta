@@ -66,6 +66,7 @@
   .selectBlockchain {
     flex-wrap: wrap;
     gap: 0.5rem;
+    z-index: 2;
 
     .blockchain {
       width: fit-content;

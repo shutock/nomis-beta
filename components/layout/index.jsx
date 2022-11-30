@@ -9,7 +9,7 @@ export default function Layout({
   pageTitle = "Page",
   pageClass = "page",
   pageDescription = "Wallet Scoring and Credentials Protocol. The infrastructure for data-based personalized web3 experiences.",
-  pageShareImage = "",
+  pageShareImage = "/share/default.png",
 }) {
   const title = pageTitle + " / Nomis";
 

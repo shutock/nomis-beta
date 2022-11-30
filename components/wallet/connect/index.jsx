@@ -1,7 +1,10 @@
 import React from "react";
+import useSWR from "swr";
 
 import ConnectButton from "./connectButton";
 import ConnectModal from "./connectModal";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Connect() {
   const [isOpen, setIsOpen] = React.useState(false);

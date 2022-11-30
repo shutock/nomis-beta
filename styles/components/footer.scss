@@ -1,10 +1,14 @@
 @import "../global";
 
 footer {
-  .footer {
-    padding: 2rem;
-    border-radius: 2rem;
-    background: $color-overlay-1;
-    gap: 1rem;
+  .wrapper {
+    padding: 1rem;
+
+    .footer {
+      padding: 2rem;
+      border-radius: 2rem;
+      background: $color-overlay-1;
+      gap: 1rem;
+    }
   }
 }

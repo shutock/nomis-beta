@@ -7,6 +7,7 @@ import AddressCopy from "./addressCopy";
 import ProfileStats from "./profileStats";
 import LogoutButton from "./logoutButton";
 import ThemeSwitcher from "../../themeSwitcher";
+import Link from "next/link";
 
 export default function ProfileModal({ handleClose, isOpen }) {
   const connected = useSelector((s) => s.connectedWallet);
@@ -23,11 +24,16 @@ export default function ProfileModal({ handleClose, isOpen }) {
             <span className="id">ID</span>
           </h5>
           <div className="close" onClick={handleClose}>
-            <Icon size={16} icon="close" />
+            <Icon size={20} icon="close" />
           </div>
         </div>
         <div className="col content">
-          <LogoutButton handleClose={handleClose} />
+          {/* <LogoutButton handleClose={handleClose} /> */}
+          <Link href="/id">
+            <div className="col openId">
+              <Icon icon="open_in_new" />
+            </div>
+          </Link>
 
           <div className="col avatar">
             <div className="userpick">

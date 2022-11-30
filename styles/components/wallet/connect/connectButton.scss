@@ -8,6 +8,11 @@
   color: $color-heading;
   cursor: pointer;
   transition: background $transition-fast, border-color $transition-fast;
+  white-space: pre;
+
+  @media screen and (max-width: $width-mobile) {
+    padding: calc(0.75rem - 1px) calc(1rem - 1px);
+  }
 
   &:hover {
     background: $color-overlay-1-solid;

@@ -7,6 +7,7 @@ export const blockchains = [
     id: "",
     startDate: "2018-12-04",
     coingeckoId: "aeternity",
+    rank: 501,
   },
   {
     item: "Binance",
@@ -16,6 +17,7 @@ export const blockchains = [
     id: 56,
     startDate: "2020-09-04",
     coingeckoId: "binancecoin",
+    rank: 4,
   },
   {
     item: "Celo",
@@ -25,6 +27,7 @@ export const blockchains = [
     id: 42220,
     startDate: "2020-05-23",
     coingeckoId: "celo",
+    rank: 109,
   },
   {
     item: "Cube",
@@ -34,6 +37,7 @@ export const blockchains = [
     id: 1818,
     startDate: "2020-06-06",
     coingeckoId: "cube",
+    rank: 385,
   },
   {
     item: "Ethereum",
@@ -43,6 +47,7 @@ export const blockchains = [
     id: 1,
     startDate: "2015-7-30",
     coingeckoId: "ethereum",
+    rank: 2,
   },
   {
     item: "Evmos",
@@ -52,6 +57,7 @@ export const blockchains = [
     id: 9001,
     startDate: "2022-05-04",
     coingeckoId: "evmos",
+    rank: 124,
   },
   {
     item: "Hedera",
@@ -61,6 +67,7 @@ export const blockchains = [
     id: "",
     startDate: "2019-09-20",
     coingeckoId: "hedera-hashgraph",
+    rank: 37,
   },
   {
     item: "Klaytn",
@@ -70,6 +77,7 @@ export const blockchains = [
     id: 8217,
     startDate: "2020-03-31",
     coingeckoId: "klay-token",
+    rank: 71,
   },
   {
     item: "Moonbeam",
@@ -79,6 +87,7 @@ export const blockchains = [
     id: 1284,
     startDate: "2022-01-11",
     coingeckoId: "moonbeam",
+    rank: 171,
   },
   {
     item: "Near",
@@ -88,6 +97,7 @@ export const blockchains = [
     id: "",
     startDate: "2020-10-14",
     coingeckoId: "near",
+    rank: 36,
   },
   {
     item: "Polygon",
@@ -97,6 +107,7 @@ export const blockchains = [
     id: 137,
     startDate: "2019-04-29",
     coingeckoId: "matic-network",
+    rank: 10,
   },
   {
     item: "Ripple",
@@ -106,6 +117,7 @@ export const blockchains = [
     id: "",
     startDate: "2013-08-05",
     coingeckoId: "ripple",
+    rank: 7,
   },
   {
     item: "Solana",
@@ -115,6 +127,7 @@ export const blockchains = [
     id: "",
     startDate: "2020-04-11",
     coingeckoId: "solana",
+    rank: 18,
   },
   {
     item: "Tron",
@@ -124,6 +137,7 @@ export const blockchains = [
     id: "",
     startDate: "2017-09-14",
     coingeckoId: "tron",
+    rank: 17,
   },
 ];
 

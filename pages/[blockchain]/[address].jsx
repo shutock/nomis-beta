@@ -23,20 +23,6 @@ export default function ScoredWallet({ query }) {
   const currentBlockchain = blockchains.find(
     (e) => e.slug === query.blockchain
   );
-  // if (!query)
-  //   return (
-  //     <Layout
-  //       pageClass="scoredWallet"
-  //       pageTitle={`There is an Error`}
-  //       pageDescription={`We can't get score of this wallet.`}
-  //     >
-  //       <div className=".row wrapper">
-  //         <Menu />
-
-  //         <WalletStats state="error" />
-  //       </div>
-  //     </Layout>
-  //   );
 
   return (
     <Layout

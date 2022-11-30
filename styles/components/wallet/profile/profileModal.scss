@@ -83,6 +83,20 @@
     overflow-y: auto;
     height: 100%;
 
+    .openId {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: fit-content;
+      background: $color-overlay-1;
+      padding: 0.3125rem;
+      border-radius: 1rem;
+
+      &:hover {
+        background: $color-overlay-2;
+      }
+    }
+
     .avatar {
       align-items: center;
       gap: 0.5rem;

@@ -57,3 +57,14 @@ section {
   width: 100%;
   height: fit-content;
 }
+
+.layout {
+  padding: 1rem;
+  gap: 1rem;
+
+  .content {
+    background: $color-overlay-1;
+    padding: 2rem 1rem 1rem;
+    border-radius: 2rem;
+  }
+}

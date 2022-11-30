@@ -6,6 +6,16 @@
   border-radius: 1.5rem;
   cursor: pointer;
 
+  @media screen and (max-width: $width-mobile) {
+    max-width: 2.5rem;
+    $padding: 0.5rem;
+    $offset: 0.0625rem;
+    padding-top: calc($padding + $offset);
+    padding-right: calc($padding - $offset);
+    padding-bottom: calc($padding - $offset);
+    padding-left: calc($padding + $offset);
+  }
+
   &:hover {
     background: $color-overlay-2;
   }
@@ -14,5 +24,11 @@
     width: 100%;
     align-items: center;
     gap: 0.5rem;
+
+    span {
+      @media screen and (max-width: $width-mobile) {
+        display: none;
+      }
+    }
   }
 }

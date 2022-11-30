@@ -12,7 +12,7 @@
     .scene {
       position: absolute;
       top: -10rem;
-      left: 0;
+      left: 40rem;
       right: 0;
       bottom: 0;
       cursor: grab;
@@ -27,25 +27,28 @@
       }
     }
 
-    .card {
-      padding: 2rem;
-      border-radius: 3rem;
-      background: $color-overlay-1;
-      max-width: 62rem;
-      backdrop-filter: $style-blur-soft;
-      -webkit-backdrop-filter: $style-blur-soft;
-      z-index: 1;
-      h1 {
-      }
-      h2 {
-        margin-top: 1rem;
-      }
-      p {
-        margin: 1rem 0;
-      }
+    .wrapper {
+      padding: 1rem;
+      .card {
+        padding: 2rem;
+        border-radius: 3rem;
+        background: $color-overlay-1;
+        max-width: 62rem;
+        backdrop-filter: $style-blur-soft;
+        -webkit-backdrop-filter: $style-blur-soft;
+        z-index: 1;
+        h1 {
+        }
+        h2 {
+          margin-top: 1rem;
+        }
+        p {
+          margin: 1rem 0;
+        }
 
-      .buttons {
-        gap: 1rem;
+        .buttons {
+          gap: 1rem;
+        }
       }
     }
   }

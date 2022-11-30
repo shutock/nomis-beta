@@ -20,7 +20,11 @@ export default function ProfileStats({ wallet }) {
 
       <div className="col stat turnover">
         <div className="row value">
-          <span className="num">{turnover}</span>
+          <span className="num">
+            {turnover < 1000
+              ? turnover
+              : Math.round((turnover / 1000) * 100) / 100 + "k"}
+          </span>
           <span className="units">{wallet.wallet.blockchain.coin}</span>
         </div>
         <div className="description">Turnover</div>

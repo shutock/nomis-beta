@@ -26,43 +26,11 @@ function App({ Component, pageProps }) {
     provider,
   });
 
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(false);
-
-  const router = useRouter();
-  React.useEffect(() => {
-    const handleLoading = () => {
-      setIsLoading(true);
-      setTimeout(() => {
-        setIsVisible(true);
-      }, 200);
-    };
-    const handleLoaded = () => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 200);
-    };
-
-    router.events.on("routeChangeStart", handleLoading);
-    router.events.on("routeChangeComplete", handleLoaded);
-    router.events.on("routeChangeError", handleLoaded);
-    return () => {
-      router.events.off("routeChangeStart", handleLoading);
-      router.events.off("routeChangeComplete", handleLoaded);
-      router.events.off("routeChangeError", handleLoaded);
-    };
-  }, [router.events]);
-
   return (
     <Provider store={store}>
       <ThemeProvider>
         <WagmiConfig client={wagmiClient}>
-          {isVisible ? (
-            <Loader isLoading={isLoading} />
-          ) : (
-            <Component {...pageProps} />
-          )}
+          <Component {...pageProps} />
         </WagmiConfig>
       </ThemeProvider>
     </Provider>
