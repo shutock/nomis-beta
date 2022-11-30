@@ -146,7 +146,7 @@ export const blockchains = [
     coin: "WAVES",
     id: "",
     startDate: "2016-06-02",
-    coingeckoId: "tron",
+    coingeckoId: "waves",
     rank: 130,
   },
 ];

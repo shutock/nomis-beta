@@ -11,8 +11,8 @@ export default function Shortcut() {
 
   return (
     <div className="row shortcut">
-      {isMac ? (
-        <Icon size={16} icon="keyboard_command_key" />
+      {!isMac ? (
+        <Icon size={16} icon="keyboard_control_key" />
       ) : (
         <span className="ctrl">ctrl</span>
       )}
