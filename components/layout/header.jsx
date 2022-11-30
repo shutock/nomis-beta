@@ -16,23 +16,32 @@ export default function Header() {
     background: "rgba(var(--color-bg), calc(var(--alpha-bg) *" + percent + "))",
     borderColor:
       "rgba(var(--color-text), calc(var(--alpha-border) *" + percent + "))",
-    backdropFilter: "blur(" + percent + "rem)",
   };
   return (
-    <header style={style}>
-      <div className="wrapper">
-        <div className="row header">
-          <div className="row logoWrapper">
-            <Logo />
-          </div>
-          <div className="row getScoreWrapper">
-            <GetScore />
-          </div>
-          <div className="row walletWrapper">
-            <Wallet />
+    <>
+      <style jsx>
+        {`
+          header {
+            backdrop-filter: blur(${percent}rem);
+            -webkit-backdrop-filter: blur(${percent}rem);
+          }
+        `}
+      </style>
+      <header style={style}>
+        <div className="wrapper">
+          <div className="row header">
+            <div className="row logoWrapper">
+              <Logo />
+            </div>
+            <div className="row getScoreWrapper">
+              <GetScore />
+            </div>
+            <div className="row walletWrapper">
+              <Wallet />
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
